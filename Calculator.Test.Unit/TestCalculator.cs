@@ -14,7 +14,7 @@ namespace Calculator.Test.Unit
         [Test]
         public void TestAdd()
         {
-            //var uut = new Calculator(); buvbwuvbwuovbw
+            //var uut = new Calculator();
             Assert.That(uut.Add(4,8),Is.EqualTo(12));
         }
 
@@ -30,6 +30,13 @@ namespace Calculator.Test.Unit
         {
             //var uut = new Calculator();
             Assert.That(uut.Multiply(10, 52), Is.EqualTo(520));
+        }
+
+        [TestCase(16, 8, 2)]
+        [TestCase(100, 20, 5)]
+        public void TestDivide(double dividend, double divisor, double result)
+        {
+            Assert.That(uut.Divide(dividend, divisor), Is.EqualTo(result));
         }
 
         [TestCase(2,2,4)]
