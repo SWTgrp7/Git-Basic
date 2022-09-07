@@ -46,5 +46,37 @@ namespace Calculator.Test.Unit
             //var uut = new Calculator();
             Assert.That(uut.Power(x, exp), Is.EqualTo(result));
         }
+
+        [TestCase(10, 2, 12)]
+        [TestCase(10, 17, 27)]
+        public void TestOverloadedAdd(double accumulator, double number, double result)
+        {
+            uut.Accumulator = accumulator;
+            Assert.That(uut.Add(number), Is.EqualTo(result));
+        }
+
+        [TestCase(10, 2, 8)]
+        [TestCase(10, 17, -7)]
+        public void TestOverloadedSubtract(double accumulator, double number, double result)
+        {
+            uut.Accumulator = accumulator;
+            Assert.That(uut.Subtract(number), Is.EqualTo(result));
+        }
+
+        [TestCase(10, 2, 20)]
+        [TestCase(10, 17, 170)]
+        public void TestOverloadedMultiply(double accumulator, double number, double result)
+        {
+            uut.Accumulator = accumulator;
+            Assert.That(uut.Multiply(number), Is.EqualTo(result));
+        }
+
+        [TestCase(10, 2, 100)]
+        [TestCase(5,4 , 625)]
+        public void TestOverloadedPower(double accumulator, double exp, double result)
+        {
+            uut.Accumulator = accumulator;
+            Assert.That(uut.Power(exp), Is.EqualTo(result));
+        }
     }
 }
