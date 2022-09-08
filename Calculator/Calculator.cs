@@ -30,8 +30,7 @@ namespace Calculator
             return Accumulator;
         }
 
-        public double Accumulator { get; private set; }
-
+        public double Accumulator { get; private set; } = 0;
 
         public double Divide(double dividend, double divisor)
         {
