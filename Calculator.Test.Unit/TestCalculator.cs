@@ -1,4 +1,6 @@
 
+using System.Reflection;
+
 namespace Calculator.Test.Unit
 {
     public class CalculatorUnitTests
@@ -51,7 +53,7 @@ namespace Calculator.Test.Unit
         [TestCase(10, 17, 27)]
         public void TestOverloadedAdd(double accumulator, double number, double result)
         {
-            uut.Accumulator = accumulator;
+            uut.Add(0, accumulator);
             Assert.That(uut.Add(number), Is.EqualTo(result));
         }
 
@@ -59,7 +61,7 @@ namespace Calculator.Test.Unit
         [TestCase(10, 17, -7)]
         public void TestOverloadedSubtract(double accumulator, double number, double result)
         {
-            uut.Accumulator = accumulator;
+            uut.Add(0, accumulator);
             Assert.That(uut.Subtract(number), Is.EqualTo(result));
         }
 
@@ -67,7 +69,7 @@ namespace Calculator.Test.Unit
         [TestCase(10, 17, 170)]
         public void TestOverloadedMultiply(double accumulator, double number, double result)
         {
-            uut.Accumulator = accumulator;
+            uut.Add(0, accumulator);
             Assert.That(uut.Multiply(number), Is.EqualTo(result));
         }
 
@@ -75,7 +77,7 @@ namespace Calculator.Test.Unit
         [TestCase(5,4 , 625)]
         public void TestOverloadedPower(double accumulator, double exp, double result)
         {
-            uut.Accumulator = accumulator;
+            uut.Add(0, accumulator);
             Assert.That(uut.Power(exp), Is.EqualTo(result));
         }
     }
